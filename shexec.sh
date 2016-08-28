@@ -844,7 +844,7 @@ function set_schedule()
 				# Verifica a extensão do arquivo de perfil
 				if [ "${OPT[0]##*.}" == "shexec" ]; then
 						# Salva os parametros e valores do comando 'CMD'
-						_CMD="'$PWD/$SCRIPT' --exec '${OPT[0]}'"
+						_CMD="'$PWD/$SCRIPT.sh' --exec '${OPT[0]}'"
 						echo "$(basename "${OPT[0]}") ${OPT[2]} ${OPT[1]} ${OPT[*]:3} $_CMD" | tr -d '"' | \
 						awk '{printf "%s\n%s\n%s\n%s\n%s\n%s\n%s %s %s\n",$1,$3,$2,$4,$5,$6,$7,$8,$9}' >> $CRON_SYS 
 						ch=1	# Status
